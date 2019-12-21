@@ -260,7 +260,7 @@ NS_ASSUME_NONNULL_END
     NSURL *URL = [NSURL URLWithString:@"ios/submitDevelopmentCSR.action" relativeToURL:self.baseURL];
     NSString *encodedCSR = [[NSString alloc] initWithData:request.data encoding:NSUTF8StringEncoding];
     NSString *uuid = [[NSUUID UUID] UUIDString];
-    NSString *fullMachineName = [NSString stringWithFormat:@"%@%@", machineName, uuid];
+    NSString *fullMachineName = [NSString stringWithFormat:@"%@ - %@", machineName, uuid];
     
     [self sendRequestWithURL:URL additionalParameters:@{@"csrContent": encodedCSR,
                                                         @"machineId": uuid,
@@ -301,7 +301,7 @@ NS_ASSUME_NONNULL_END
 
     NSURL *URL = [NSURL URLWithString:@"ios/submitDevelopmentCSR.action" relativeToURL:self.baseURL];
     NSString *uuid = [[NSUUID UUID] UUIDString];
-    NSString *machineName = [NSString stringWithFormat:@"%@%@", prefix, uuid];
+    NSString *machineName = [NSString stringWithFormat:@"%@ - %@", prefix, uuid];
     
     [self sendRequestWithURL:URL additionalParameters:@{@"csrContent": encodedCSR,
                                        @"machineId": uuid,
