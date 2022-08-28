@@ -70,7 +70,6 @@ let package = Package(
                 "lookup2.c",
                 "libplist/src",
                 "libplist/libcnary",
-                "libplist/libcnary/src",
             ],
             publicHeadersPath: "",
             cSettings: [
